@@ -12,7 +12,7 @@ export function Information(props: InformationProps) {
       <form action="">
         <div className="card" size="2x">
           <img
-            className="img-fluid"
+            className="img-thumbnail"
             src="https://scontent.fsyq4-1.fna.fbcdn.net/v/t39.30808-6/329539602_1133758127285843_4665986158086190813_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=Zn8uttHSavcAX-IpjKC&_nc_ht=scontent.fsyq4-1.fna&oh=00_AfDSZ4iFN1MWulkHEo_atrC6zgKjq4cXWiNCGWo_rL5WlQ&oe=64436857"
             alt="..."
           />

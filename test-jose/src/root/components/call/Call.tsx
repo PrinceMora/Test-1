@@ -12,7 +12,7 @@ const Call = () => {
             You can tell me on my social networks so you can see more projects
           </p>
           <footer className="blockquote-footer">
-            Instant quotes <cite title="Source Title"> in Seconds</cite>
+            Instant quotes <cite title="Source Title"> (in Seconds)</cite>
           </footer>
         </blockquote>
       </div>

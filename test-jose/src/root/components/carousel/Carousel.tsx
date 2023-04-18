@@ -43,7 +43,7 @@ export function Carousel() {
             className={"carousel-item " + (index === 0 ? "active" : "")}
           >
             <img
-              src="https://unavatar.io/midudev"
+              src="	https://img.freepik.com/psd-premium/papel-a4-maqueta-carpeta-presentacion_47987-2579.jpg"
               className="d-block w-100"
               alt="..."
             />
