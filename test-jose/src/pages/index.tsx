@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "@/root/components/carousel/Carousel";
 import Footer from "@/root/components/footer/Footer";
 import Call from "@/root/components/call/Call";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const fakeNewsData: InformationProps[] = [
   {
