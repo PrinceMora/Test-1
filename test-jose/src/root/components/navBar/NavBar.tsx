@@ -39,19 +39,19 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <button onClick={() => handleOptionClick(firstDivRef)}>
+              <a className="nav-link active" aria-current="page" href="#">
                 Information
-              </button>
+              </a>
             </li>
             <li className="nav-item">
-              <button onClick={() => handleOptionClick(secondDivRef)}>
-                Carousel
-              </button>
+              <a className="nav-link" href="#">
+                Carrusell
+              </a>
             </li>
             <li className="nav-item">
-              <button onClick={() => handleOptionClick(thirdDivRef)}>
+              <a className="nav-link" href="#">
                 Footer
-              </button>
+              </a>
             </li>
           </ul>
         </div>

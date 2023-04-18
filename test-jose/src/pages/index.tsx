@@ -8,13 +8,16 @@ import {
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "@/root/components/carousel/Carousel";
+import Footer from "@/root/components/footer/Footer";
+import Call from "@/root/components/call/Call";
 
 const fakeNewsData: InformationProps[] = [
   {
     name: "Jose",
     lastName: "Fallas Mora",
     email: "josefallasmora@gmail.com",
-    tastes: "I like Practics Deports like Soccer,Calistenics and Gym",
+    tastes:
+      "I like physical conditioning, practice soccer and calisthenics, I love to cook",
   },
 ];
 
@@ -30,6 +33,8 @@ export default function Home() {
       <main>
         <Main features={fakeNewsData} />
         <Carousel />
+        <Call />
+        <Footer />
       </main>
     </>
   );
