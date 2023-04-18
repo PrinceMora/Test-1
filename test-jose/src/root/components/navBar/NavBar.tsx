@@ -1,6 +1,24 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import Information from "../information/Information";
+interface RefObject<T> {
+  readonly current: T | null;
+}
+
+interface HandleOptionClick {
+  (targetRef: RefObject<HTMLDivElement>): void;
+}
 
 function NavBar() {
+  const firstDivRef = useRef(null);
+  const secondDivRef = useRef(null);
+  const thirdDivRef = useRef(null);
+
+  const handleOptionClick: HandleOptionClick = (targetRef) => {
+    if (targetRef.current) {
+      targetRef.current.focus();
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -21,19 +39,19 @@ function NavBar() {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <button onClick={() => handleOptionClick(firstDivRef)}>
                 Information
-              </a>
+              </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Carrusell
-              </a>
+              <button onClick={() => handleOptionClick(secondDivRef)}>
+                Carousel
+              </button>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Encabezado
-              </a>
+              <button onClick={() => handleOptionClick(thirdDivRef)}>
+                Footer
+              </button>
             </li>
           </ul>
         </div>

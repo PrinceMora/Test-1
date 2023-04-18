@@ -1,64 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+interface Repo {
+  name: string;
+  description: string;
+  html_url: string;
+  private: boolean;
+}
 
 export function Carousel() {
+  const [repos, setRepos] = useState<Repo[]>([]);
+
+  const url = "https://api.github.com/users/PrinceMora/repos";
+
+  const fetchApi = async () => {
+    const response = await fetch(url);
+    const data = await response.json();
+    setRepos(data);
+  };
+
+  useEffect(() => {
+    fetchApi();
+  }, []);
+
   return (
     <div id="carouselExampleCaptions" className="carousel slide">
       <div className="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          className="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
+        {repos.map((repo, index) => (
+          <button
+            key={index}
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to={index.toString()}
+            className={index === 0 ? "active" : ""}
+            aria-current={index === 0 ? "true" : undefined}
+            aria-label={"Slide " + (index + 1)}
+          ></button>
+        ))}
       </div>
       <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/4385/folders-clipart-md.png"
-            className="d-block w-100"
-            alt="..."
-          />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+        {repos.map((repo, index) => (
+          <div
+            key={index}
+            className={"carousel-item " + (index === 0 ? "active" : "")}
+          >
+            <img
+              src="https://unavatar.io/midudev"
+              className="d-block w-100"
+              alt="..."
+            />
+            <div className="carousel-caption d-none d-md-block">
+              <h5>{repo.name}</h5>
+              <p>{repo.description}</p>
+              <a href={repo.html_url}>Repo Link</a>
+            </div>
           </div>
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/4385/folders-clipart-md.png"
-            className="d-block w-100"
-            alt="..."
-          />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyLZJtKuzydugIDdysJWt_9GbqLHs28lPcEg&usqp=CAU"
-            className="d-block w-100"
-            alt="..."
-          />
-          <div className="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
+        ))}
       </div>
       <button
         className="carousel-control-prev"

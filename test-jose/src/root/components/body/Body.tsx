@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Information, {
   InformationProps,
 } from "@/root/components/information/Information";
@@ -10,7 +10,7 @@ interface BodyProps {
 
 function Body(props: BodyProps) {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="text-gray-600 body-font" tabIndex={0}>
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap w-full mb-20 flex-col items-center text-center">
           <NavBar />
