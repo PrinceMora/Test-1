@@ -8,7 +8,7 @@ interface HandleOptionClick {
   (targetRef: RefObject<HTMLDivElement>): void;
 }
 
-function NavBar() {
+export function NavBar() {
   const firstDivRef = useRef(null);
   const secondDivRef = useRef(null);
   const thirdDivRef = useRef(null);
