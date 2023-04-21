@@ -3,10 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
   faTwitter,
-  faInstagram,
+  faInstagram
 } from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
+  const style = { height: "25px", with: "25px," };
   return (
     <footer className="bg-dark text-white py-4">
       <div className="container">
@@ -21,7 +22,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="text-white"
                 >
-                  <FontAwesomeIcon icon={faFacebook} size="2x" />
+                  <FontAwesomeIcon icon={faFacebook} style={style} />
                 </a>
               </li>
               <li className="list-inline-item">
@@ -31,7 +32,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="text-white"
                 >
-                  <FontAwesomeIcon icon={faTwitter} size="2x" />
+                  <FontAwesomeIcon icon={faTwitter} style={style} />
                 </a>
               </li>
               <li className="list-inline-item">
@@ -41,7 +42,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="text-white"
                 >
-                  <FontAwesomeIcon icon={faInstagram} size="2x" />
+                  <FontAwesomeIcon icon={faInstagram} style={style} />
                 </a>
               </li>
             </ul>
