@@ -1,10 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faTwitter,
-  faInstagram
-} from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   const style = { height: "25px", with: "25px," };
@@ -14,38 +8,7 @@ function Footer() {
         <div className="row">
           <div className="col-md-6">
             <h5 className="mb-3">Follow me on my social networks</h5>
-            <ul className="list-inline">
-              <li className="list-inline-item">
-                <a
-                  href="https://www.facebook.com/tuUsuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  <FontAwesomeIcon icon={faFacebook} style={style} />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a
-                  href="https://twitter.com/tuUsuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  <FontAwesomeIcon icon={faTwitter} style={style} />
-                </a>
-              </li>
-              <li className="list-inline-item">
-                <a
-                  href="https://www.instagram.com/tuUsuario"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  <FontAwesomeIcon icon={faInstagram} style={style} />
-                </a>
-              </li>
-            </ul>
+            <ul className="list-inline"></ul>
           </div>
           <div className="col-md-6">
             <h5 className="mb-3">Contact:</h5>
